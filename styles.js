@@ -1,6 +1,9 @@
-*,
-*::after,
-*::before {
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+  *,
+  *::after,
+  *::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -8,6 +11,8 @@
 
 :root {
   --max-width: 1200px;
+  --primary-color: #393d3f;
+  --secondary-color: #00916e;
   --primary-background-color: #f8f7f4;
   --secondary-background-color: #d0f8b9;
 }
@@ -17,3 +22,4 @@ body {
     "Helvetica Neue", sans-serif;
   background-color: var(--primary-background-color);
 }
+`;
