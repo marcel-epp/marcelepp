@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { usePathname } from "next/navigation";
 
 export const StyledNavigation = styled.nav`
   padding-right: 1.5em;
@@ -14,6 +15,9 @@ export const StyledNavigation = styled.nav`
     display: block;
     text-decoration: none;
     padding: 1em;
+  }
+  ul .active a {
+    color: var(--secondary-color);
   }
   ul li a:hover {
     color: var(--secondary-color);
