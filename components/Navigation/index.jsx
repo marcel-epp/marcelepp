@@ -1,6 +1,5 @@
-import { StyledNavigation } from "./Navigation.Styled";
+import { StyledNavigation, StyledNavUl, StyledLink } from "./Navigation.Styled";
 import { useRouter } from "next/router";
-import Link from "next/link";
 
 export default function Navigation() {
   const router = useRouter();
@@ -8,14 +7,18 @@ export default function Navigation() {
   return (
     <>
       <StyledNavigation>
-        <ul>
-          <li className={router.pathname === "/" ? "active" : ""}>
-            <Link href="/">Home</Link>
+        <StyledNavUl>
+          <li>
+            <StyledLink href="/" $active={router.pathname === "/"}>
+              Home
+            </StyledLink>
           </li>
-          <li className={router.pathname === "/posts" ? "active" : ""}>
-            <Link href="/posts">Posts</Link>
+          <li>
+            <StyledLink href="/posts" $active={router.pathname === "/posts"}>
+              Posts
+            </StyledLink>
           </li>
-        </ul>
+        </StyledNavUl>
       </StyledNavigation>
     </>
   );

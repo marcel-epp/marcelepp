@@ -1,26 +1,37 @@
 import styled from "styled-components";
-import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 export const StyledNavigation = styled.nav`
-  padding-right: 1.5em;
-  ul {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5em;
-    list-style-type: none;
+  @media only screen and (min-width: 600px) {
+    padding-right: 1.5em;
   }
-  ul li a {
-    color: var(--primary-color);
-    font-weight: 600;
-    display: block;
-    text-decoration: none;
+`;
+
+export const StyledNavUl = styled.ul`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 0.5em;
+  list-style-type: none;
+  @media only screen and (min-width: 600px) {
+    flex-direction: row;
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: ${(props) =>
+    props.$active ? "var(--secondary-color)" : "var(--primary-color)"};
+  background-color: var(--secondary-background-color);
+  display: block;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 1em 1.5em;
+  @media only screen and (min-width: 600px) {
     padding: 1em;
-  }
-  ul .active a {
-    color: var(--secondary-color);
-  }
-  ul li a:hover {
-    color: var(--secondary-color);
-    transition: all 500ms ease-in-out;
+    background-color: var(--secondary-background-color);
+    &:hover {
+      color: var(--secondary-color);
+      transition: all 500ms ease-in-out;
+    }
   }
 `;
