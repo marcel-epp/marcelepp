@@ -1,7 +1,13 @@
 import Header from "../Header";
 import Head from "next/head";
+import { StyledMain } from "./Layout.Styled";
 
-export default function Layout({ children }) {
+export default function Layout({
+  children,
+  isActive,
+  setActive,
+  onToggleClass,
+}) {
   return (
     <>
       <Head>
@@ -10,8 +16,12 @@ export default function Layout({ children }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <main>{children}</main>
+      <Header
+        isActive={isActive}
+        setActive={setActive}
+        onToggleClass={onToggleClass}
+      />
+      <StyledMain>{children}</StyledMain>
     </>
   );
 }

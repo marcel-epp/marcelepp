@@ -1,12 +1,12 @@
 import { StyledNavigation, StyledNavUl, StyledLink } from "./Navigation.Styled";
 import { useRouter } from "next/router";
 
-export default function Navigation() {
+export default function Navigation({ isActive }) {
   const router = useRouter();
 
   return (
     <>
-      <StyledNavigation>
+      <StyledNavigation $active={isActive}>
         <StyledNavUl>
           <li>
             <StyledLink href="/" $active={router.pathname === "/"}>

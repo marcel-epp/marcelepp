@@ -10,7 +10,9 @@ export default createGlobalStyle`
 }
 
 :root {
-  --max-width: 1200px;
+  --max-width: 1000px;
+  --main-padding-full: 1.5em;
+  --main-padding-sides: 0 1.5em;
   --primary-color: #393d3f;
   --secondary-color: #00916e;
   --primary-background-color: #f8f7f4;

@@ -3,13 +3,14 @@ import {
   StyledHeaderInner,
   StyledBrand,
   StyledBrandImage,
+  StyledBrandButton,
   StyledMenuIcon,
 } from "./Header.Styled";
 import Navigation from "../Navigation";
-import Image from "next/image";
 import plusIcon from "../../public/images/plus-solid.svg";
 
-export default function Header() {
+export default function Header({ isActive, onToggleClass }) {
+  console.log(isActive);
   return (
     <>
       <StyledHeader>
@@ -20,10 +21,19 @@ export default function Header() {
               width={80}
               height={44}
               alt="Marcel Epp Webseiten Logo"
+              priority={true}
             />
-            <StyledMenuIcon src={plusIcon} width={32} height={32} alt="Menu" />
+            <StyledBrandButton type="button" onClick={onToggleClass}>
+              <StyledMenuIcon
+                src={plusIcon}
+                width={32}
+                height={32}
+                alt="Menu"
+                $active={isActive}
+              />
+            </StyledBrandButton>
           </StyledBrand>
-          <Navigation />
+          <Navigation isActive={isActive} />
         </StyledHeaderInner>
       </StyledHeader>
     </>

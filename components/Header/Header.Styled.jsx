@@ -11,7 +11,7 @@ export const StyledHeaderInner = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 0;
+  padding: var(--main-padding-sides);
   margin: auto;
   @media only screen and (min-width: 600px) {
     flex-direction: row;
@@ -26,12 +26,19 @@ export const StyledBrand = styled.div`
 `;
 
 export const StyledBrandImage = styled(Image)`
-  margin: 1.5em 0 1.5em 1.5em;
+  margin: 1.5em 0;
+`;
+
+export const StyledBrandButton = styled.button`
+  background-color: transparent;
+  border: none;
 `;
 
 export const StyledMenuIcon = styled(Image)`
-  margin: 1.5em 1.5em 1.5em 0;
+  margin: 1.5em 0;
   cursor: pointer;
+  transform: ${(props) => (props.$active ? "rotate(45deg)" : "rotate(0deg)")};
+  transition: transform 0.3s;
   @media only screen and (min-width: 600px) {
     display: none;
   }
