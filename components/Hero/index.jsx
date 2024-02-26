@@ -1,6 +1,6 @@
 import { StyledHero } from "./Hero.Styled";
 
-export default function Header() {
+export default function Hero() {
   return (
     <>
       <StyledHero>
