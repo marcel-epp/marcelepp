@@ -9,8 +9,7 @@ import {
 import Navigation from "../Navigation";
 import plusIcon from "../../public/images/plus-solid.svg";
 
-export default function Header({ isActive, onToggleClass }) {
-  console.log(isActive);
+export default function Header({ isActive, ontoggleStateActive }) {
   return (
     <>
       <StyledHeader>
@@ -23,7 +22,7 @@ export default function Header({ isActive, onToggleClass }) {
               alt="Marcel Epp Webseiten Logo"
               priority={true}
             />
-            <StyledBrandButton type="button" onClick={onToggleClass}>
+            <StyledBrandButton type="button" onClick={ontoggleStateActive}>
               <StyledMenuIcon
                 src={plusIcon}
                 width={32}
@@ -33,7 +32,10 @@ export default function Header({ isActive, onToggleClass }) {
               />
             </StyledBrandButton>
           </StyledBrand>
-          <Navigation isActive={isActive} />
+          <Navigation
+            isActive={isActive}
+            ontoggleStateActive={ontoggleStateActive}
+          />
         </StyledHeaderInner>
       </StyledHeader>
     </>

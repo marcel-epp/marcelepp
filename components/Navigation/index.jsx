@@ -1,7 +1,7 @@
 import { StyledNavigation, StyledNavUl, StyledLink } from "./Navigation.Styled";
 import { useRouter } from "next/router";
 
-export default function Navigation({ isActive }) {
+export default function Navigation({ isActive, ontoggleStateActive }) {
   const router = useRouter();
 
   return (
@@ -9,12 +9,18 @@ export default function Navigation({ isActive }) {
       <StyledNavigation $active={isActive}>
         <StyledNavUl>
           <li>
-            <StyledLink href="/" $active={router.pathname === "/"}>
+            <StyledLink
+              href="/"
+              $active={router.pathname === "/"}
+              onClick={ontoggleStateActive}>
               Home
             </StyledLink>
           </li>
           <li>
-            <StyledLink href="/posts" $active={router.pathname === "/posts"}>
+            <StyledLink
+              href="/posts"
+              $active={router.pathname === "/posts"}
+              onClick={ontoggleStateActive}>
               Posts
             </StyledLink>
           </li>

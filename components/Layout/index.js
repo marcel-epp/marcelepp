@@ -6,7 +6,7 @@ export default function Layout({
   children,
   isActive,
   setActive,
-  onToggleClass,
+  ontoggleStateActive,
 }) {
   return (
     <>
@@ -19,7 +19,7 @@ export default function Layout({
       <Header
         isActive={isActive}
         setActive={setActive}
-        onToggleClass={onToggleClass}
+        ontoggleStateActive={ontoggleStateActive}
       />
       <StyledMain>{children}</StyledMain>
     </>

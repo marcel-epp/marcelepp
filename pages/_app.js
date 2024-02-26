@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function App({ Component, pageProps }) {
   const [isActive, setActive] = useState(false);
 
-  const toggleClass = () => {
+  const toggleStateActive = () => {
     setActive(!isActive);
   };
   return (
@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }) {
       <Layout
         isActive={isActive}
         setActive={setActive}
-        onToggleClass={toggleClass}>
+        ontoggleStateActive={toggleStateActive}>
         <Component {...pageProps} />
       </Layout>
     </>

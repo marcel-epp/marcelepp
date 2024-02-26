@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Image from "next/image";
 
 export const StyledHeader = styled.header`
+  position: relative;
   background-color: var(--secondary-background-color);
 `;
 

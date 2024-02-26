@@ -2,10 +2,20 @@ import styled from "styled-components";
 import Link from "next/link";
 
 export const StyledNavigation = styled.nav`
-  padding: 1em 0;
-  display: ${(props) => (props.$active ? "block" : "none")};
+  background-color: var(--secondary-color);
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 5.2em;
+  opacity: ${(props) => (props.$active ? "1" : "0")};
+  transition: opacity 0.2s ease-in-out;
+  padding: 0.5em;
+
   @media only screen and (min-width: 600px) {
-    padding: 0;
+    background-color: var(--secondary-background-color);
+    position: unset;
+    width: auto;
+    opacity: 1;
     display: block;
   }
 `;
@@ -29,6 +39,7 @@ export const StyledLink = styled(Link)`
   font-weight: 600;
   text-decoration: none;
   padding: 1em 0;
+  text-align: center;
   @media only screen and (min-width: 600px) {
     padding: 1em;
     background-color: var(--secondary-background-color);
